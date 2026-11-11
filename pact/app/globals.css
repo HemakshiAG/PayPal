@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root,
+.dark {
+  /* Deep Impeccable Dark Surface Tokens (zinc-950 / zinc-900) */
+  --background: #09090b;
+  --foreground: #f4f4f5;
+
+  /* Card and Glass Panel Tokens */
+  --card: #18181b;
+  --card-foreground: #f4f4f5;
+  --popover: #18181b;
+  --popover-foreground: #f4f4f5;
+
+  /* Brand / Primary Tokens */
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+
+  /* Secondary Tokens */
+  --secondary: #18181b;
+  --secondary-foreground: #e4e4e7;
+
+  /* Muted Tokens */
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+
+  /* Accent Tokens */
+  --accent: #27272a;
+  --accent-foreground: #f4f4f5;
+
+  /* Destructive Tokens */
+  --destructive: #e11d48;
+  --destructive-foreground: #ffffff;
+
+  /* Border and Input Tokens */
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #10b981;
+
+  /* Custom Assurance Palette (Emerald) */
+  --assurance: #059669;
+  --assurance-foreground: #ffffff;
+
+  /* Semantic Status Tokens */
+  --status-success: #10b981;
+  --status-success-foreground: #ffffff;
+  --status-warning: #f59e0b;
+  --status-warning-foreground: #09090b;
+  --status-info: #38bdf8;
+  --status-info-foreground: #09090b;
+  --status-dispute: #f43f5e;
+  --status-dispute-foreground: #ffffff;
+
+  /* Geometry */
+  --radius: 0.75rem;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-assurance: var(--assurance);
+  --color-assurance-foreground: var(--assurance-foreground);
+  --color-status-success: var(--status-success);
+  --color-status-success-foreground: var(--status-success-foreground);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-foreground: var(--status-warning-foreground);
+  --color-status-info: var(--status-info);
+  --color-status-info-foreground: var(--status-info-foreground);
+  --color-status-dispute: var(--status-dispute);
+  --color-status-dispute-foreground: var(--status-dispute-foreground);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@keyframes pact-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pact-reveal-scale {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-pact-fade-up {
+  animation: pact-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-pact-reveal {
+  animation: pact-reveal-scale 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pact-editorial-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.pact-editorial-grid-bright {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+
+@keyframes pact-scan-line {
+  0% {
+    top: 4%;
+    opacity: 0.7;
+  }
+  50% {
+    top: 92%;
+    opacity: 1;
+  }
+  100% {
+    top: 4%;
+    opacity: 0.7;
+  }
+}
+
+.animate-pact-scan {
+  animation: pact-scan-line 2.1s ease-in-out infinite;
+}
