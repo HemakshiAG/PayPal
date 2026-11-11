@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+build/
+
+# env and secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*credential*
+service-account*.json
+
+# misc
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
